@@ -6,7 +6,7 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "concurrently \"hexo server\" \"node hexo-upload-server/server.js\""
   },
   "hexo": {
     "version": "7.3.0"
@@ -28,5 +28,8 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0",
     "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
   }
 }

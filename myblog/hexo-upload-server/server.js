@@ -10,7 +10,7 @@ const cors = require('cors');
 app.use(cors());
 
 // 设置文件存储路径
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: path.join(__dirname, 'uploads') });
 
 // 处理文件上传请求
 app.post('/upload', upload.single('file'), (req, res) => {
